@@ -24,23 +24,23 @@ public abstract class BlackjackUI extends JFrame {
     int rate;// 倍數
     int money; // 本金餘額
     int money1 = 10; // 每次賭注
-    JLabel lbl1=new JLabel("本金");
+    JLabel lbl1=new JLabel("Stake:");
     JLabel lbl2=new JLabel();
-    JLabel lbl3=new JLabel("賭注");
+    JLabel lbl3=new JLabel("Bets:");
     JLabel lbl4=new JLabel();
-    JLabel lbl5=new JLabel("結果");
+    JLabel lbl5=new JLabel("Result:");
     JLabel lbl6=new JLabel();
-    JLabel lbl7=new JLabel("倍數");
+    JLabel lbl7=new JLabel("Rate:");
     JLabel lbl8=new JLabel();
-    JLabel lbl9=new JLabel("玩家點數");
+    JLabel lbl9=new JLabel("Player Points:");
     JLabel lbl10=new JLabel(" 0.0 ");
-    JLabel lbl11=new JLabel("莊家點數");
+    JLabel lbl11=new JLabel("Dealer Points");
     JLabel lbl12=new JLabel(" 0.0 ");
 
     public BlackjackUI() {
         this.setLocation(100,50); //位置
         this.setSize(600,400);    //大小w,h
-        this.setTitle("十點半遊戲，玩家五小與十點半雙倍，同分莊家贏，每次10元"); //標題
+        this.setTitle(" \"Ten and Half,\" the dealer will win if the scores are the same."); //標題
         BorderLayout lay=new BorderLayout();
         this.setLayout(lay);
         JPanel pan1=new JPanel();

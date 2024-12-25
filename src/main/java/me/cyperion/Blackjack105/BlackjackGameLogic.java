@@ -74,13 +74,13 @@ public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
         lbl10.setText(Float.toString(p1));
         rate = 0 ;
         if (p1 > 10.5) 	  {
-            type = " 玩家爆";
+            type = " Player Lose";
             rate = -1;
             gameover = true ;
         }
         else if (p1 == 10.5) 	    {
             rate = 2;
-            type = " 玩家十點半";
+            type = " Ten and Half!!";
             gameover = true;
         }
         else if (j == 5) 	  {
@@ -102,7 +102,7 @@ public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
 
     @Override
     public void btnok() {
-        String type=" 莊家贏";
+        String type=" Dealer Win";
         rate = -1;
         // 打開莊家的牌
         icon=new ImageIcon(d[a[1]]);
@@ -126,7 +126,7 @@ public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
         p1 = p1 + p[a[0]];
         if (p2 >10.5)    	{
             rate = 1 ;
-            type = " 莊家爆" ;
+            type = " Dealer Lose" ;
         }
         else
         if (k==5)    	{
@@ -136,7 +136,7 @@ public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
         else
         if (p1 > p2)    		{
             rate = 1 ;
-            type = " 玩家贏" ;
+            type = " Player Win" ;
         }
         // 計算本金餘額
         money = Integer.parseInt(lbl2.getText());

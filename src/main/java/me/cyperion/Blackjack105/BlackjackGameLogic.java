@@ -7,6 +7,16 @@ import java.awt.event.ActionListener;
 //邏輯設定，在這裡處理遊戲邏輯(主要是按按鈕而已)
 public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
 
+    protected float p1=0, p2=0; // 玩家、莊家點數
+    protected float [] p ={
+            1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4,
+            4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
+            8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10,
+            0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f,
+            0.5f, 0.5f, 0.5f, 0.5f}; // 每一張牌面的點數
+    protected int rate;// 倍數
+    protected int money; // 本金餘額
+    protected int money1 = 10; // 每次賭注
     public BlackjackGameLogic() {
         super();
         btnstart.addActionListener(this);
@@ -102,6 +112,7 @@ public class BlackjackGameLogic extends BlackjackUI implements ActionListener {
 
     @Override
     public void btnok() {
+        //預設他是贏的
         String type=" Dealer Win";
         rate = -1;
         // 打開莊家的牌

@@ -5,38 +5,30 @@ import java.awt.*;
 
 //UI設定，在這裡搞好UI
 public abstract class BlackjackUI extends JFrame {
-    JButton btnstart = new JButton("發牌");
-    JButton btnadd = new JButton("補牌");
-    JButton btnok = new JButton("補牌確定");
-    Toolkit toolkit;
-    Icon icon;
-    JLabel lbl[];
-    String[] d = new String[53]; // 牌面解碼
-    int[] a = new int[52]; // 牌面編碼
-    int j; // 紙牌序號
-    float p1=0, p2=0; // 玩家、莊家點數
-    float [] p ={
-            1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4,
-            4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7,
-            8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10,
-            0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f, 0.5f,
-            0.5f, 0.5f, 0.5f, 0.5f}; // 每一張牌面的點數
-    int rate;// 倍數
-    int money; // 本金餘額
-    int money1 = 10; // 每次賭注
-    JLabel lbl1=new JLabel("Stake:");
-    JLabel lbl2=new JLabel();
-    JLabel lbl3=new JLabel("Bets:");
-    JLabel lbl4=new JLabel();
-    JLabel lbl5=new JLabel("Result:");
-    JLabel lbl6=new JLabel();
-    JLabel lbl7=new JLabel("Rate:");
-    JLabel lbl8=new JLabel();
-    JLabel lbl9=new JLabel("Player Points:");
-    JLabel lbl10=new JLabel(" 0.0 ");
-    JLabel lbl11=new JLabel("Dealer Points");
-    JLabel lbl12=new JLabel(" 0.0 ");
+    protected JButton btnstart = new JButton("發牌");
+    protected JButton btnadd = new JButton("補牌");
+    protected JButton btnok = new JButton("補牌確定");
+    protected Toolkit toolkit;
+    protected Icon icon;
+    protected JLabel lbl[];
+    protected String[] d = new String[53]; // 牌面解碼
+    protected int[] a = new int[52]; // 牌面編碼
+    protected int j; // 紙牌序號
 
+    protected JLabel lbl1=new JLabel("Stake:");
+    protected JLabel lbl2=new JLabel();//Stake display 本金
+    protected JLabel lbl3=new JLabel("Bets:");
+    protected JLabel lbl4=new JLabel();//Bets display 賭注
+    protected JLabel lbl5=new JLabel("Result:");
+    protected JLabel lbl6=new JLabel();//Result display
+    protected JLabel lbl7=new JLabel("Rate:");
+    protected JLabel lbl8=new JLabel();//Rate display
+    protected JLabel lbl9=new JLabel("Player Points:");
+    protected JLabel lbl10=new JLabel(" 0.0 ");
+    protected JLabel lbl11=new JLabel("Dealer Points");
+    protected JLabel lbl12=new JLabel(" 0.0 ");
+
+    //Layout -> ChatGPT :)
     public BlackjackUI() {
         this.setLocation(100,50); //位置
         this.setSize(600,400);    //大小w,h
@@ -87,11 +79,14 @@ public abstract class BlackjackUI extends JFrame {
         pan5.add(btnadd);
         pan5.add(btnok);
         toolkit=Toolkit.getDefaultToolkit();
-        btnadd.setEnabled(false);//先除能
-        btnok.setEnabled(false);//先除能
+        btnadd.setEnabled(false);//先關閉
+        btnok.setEnabled(false);//先關閉
+
+        //load image file
         for(int i=0;i<=52;i++)
             //d[i]="g"+String.valueOf(i)+".jpg";
             d[i]="src/lib/g"+i+".jpg";
+
     }
 
     //發牌
